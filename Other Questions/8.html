@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Slideshow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes fade {
+            0% { opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="https://cdn.britannica.com/48/252748-050-C514EFDB/Virat-Kohli-India-celebrates-50th-century-Cricket-November-15-2023.jpg" alt="Virat Kohli" />
+        </div>
+        <div class="mySlides fade">
+            <img src="https://images.indianexpress.com/2025/06/Kohli-Rohit-2.jpg" alt="Rohit Sharma" />
+        </div>
+        <div class="mySlides fade">
+            <img src="https://cdn.dnaindia.com/sites/default/files/2023/07/25/2600743-dhoni-dna-1.png?im=FitAndFill=(1200,900)" alt="MS Dhoni" />
+        </div>
+        <div class="mySlides fade">
+            <img src="https://th.bing.com/th/id/OIP.NjkwhLfCM-twCN-jLyx8QgHaFY?w=245&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Sachin Tendulkar" />
+        </div>
+        <div class="mySlides fade">
+            <img src="https://th.bing.com/th/id/OIP.XNlSEaUJrKAiUR9pdZlnbAHaFj?o=7rm=3&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3" alt="KL Rahul" />
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+
+        showSlides();
+    </script>
+</body>
+</html>

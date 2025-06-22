@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h1>Local Time to UTC & Timer</h1>
+
+     <button onclick="convertToUtc()">Utc Time</button>
+     <div id="UtcOutput"></div>
+
+     <button onclick="StartTimer()">Start timer</button>
+     <div id="timerOutput"></div>
+
+
+     <script>
+        function convertToUtc(){
+            const now=new Date();
+
+            const UtcTime=now.toUTCString();
+            document.getElementById("UtcOutput").innerHTML = "Current UTC Time: " + UtcTime;
+        }
+
+        function StartTimer(){
+            let Timerid;
+
+            if(Timerid){
+                clearInterval(Timerid);
+            }
+            Timerid=setInterval(()=>{
+            const now=new Date();
+            document.getElementById("timerOutput").innerHTML = "Current Local Time: " + now.toLocaleTimeString();
+            },1000)
+
+        }
+       
+     </script>
+</body>
+</html>

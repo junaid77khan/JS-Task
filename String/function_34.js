@@ -1,0 +1,1 @@
+function strip_html_tags(str) { return str.replace(/<[^>]*>/g, ''); }

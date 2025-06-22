@@ -1,0 +1,1 @@
+function text_truncate(str, length, ending) { if (typeof str !== 'string') return ''; length = length || str.length; ending = ending || '...'; return str.length > length ? str.slice(0, length - ending.length) + ending : str; }

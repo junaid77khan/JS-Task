@@ -1,0 +1,1 @@
+function search_word(str, word) { let words = str.split(' '); let count = 0; for (let i = 0; i < words.length; i++) { if (words[i] === word) { count++; } } return `${word} was found ${count} times.`; }

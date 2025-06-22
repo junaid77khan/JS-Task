@@ -1,0 +1,1 @@
+function remove_non_ascii(str) { return str.replace(/[^ -~]/g, ''); }

@@ -1,0 +1,1 @@
+function truncate_string(str, num) { return str.slice(num); }

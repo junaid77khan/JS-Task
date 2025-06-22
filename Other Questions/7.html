@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paragraph Style Toggle</title>
+  <style>
+    .highlight {
+      color: white;
+      background-color: #007bff;
+      padding: 5px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <p id="para1">This is the first paragraph.</p>
+  <p id="para2">This is the second paragraph.</p>
+
+  <button id="changeStyleBtn">Change Style</button>
+  <button id="resetStyleBtn">Reset Style</button>
+
+  <script>
+    // Create the new paragraph element
+    const newPara = document.createElement('p');
+    newPara.textContent = "This is the new inserted paragraph.";
+
+    // Insert the new paragraph between the existing two
+    const para1 = document.getElementById('para1');
+    para1.insertAdjacentElement('afterend', newPara);
+
+    // Grab the buttons
+    const changeStyleBtn = document.getElementById('changeStyleBtn');
+    const resetStyleBtn = document.getElementById('resetStyleBtn');
+
+    // Event to change style - using className property
+    changeStyleBtn.addEventListener('click', () => {
+      newPara.className = 'highlight';
+    });
+
+    // Event to reset style - removing the class
+    resetStyleBtn.addEventListener('click', () => {
+      newPara.className = '';
+    });
+  </script>
+</body>
+</html>

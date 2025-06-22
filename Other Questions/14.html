@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Visit Tracker</h1>
+        <p id="visitMessage"></p>
+        <p id="lastVisitMessage"></p>
+        <img src="https://img.freepik.com/premium-photo/random-image_590832-9826.jpg" alt="Random Image" />
+    </div>
+
+    <script>
+        function getCookie(name) {
+            let cookieArr = document.cookie.split(";");
+
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookie = cookieArr[i].trim();
+                if (cookie.indexOf(name) == 0) {
+                    return cookie.substring(name.length + 1, cookie.length); 
+                }
+            }
+            return null;
+        }
+
+        function setCookie(name, value, days) {
+            let date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        function getCurrentDateTime() {
+            const now = new Date();
+            return now.toLocaleString();
+        }
+
+        function trackVisits() {
+            let visitCount = getCookie("visitCount");
+            let lastVisit = getCookie("lastVisit");
+
+            if (visitCount === null) {
+                document.getElementById("visitMessage").textContent = "You have never visited before!";
+                document.getElementById("lastVisitMessage").textContent = "";
+                setCookie("visitCount", 1, 365);
+                setCookie("lastVisit", getCurrentDateTime(), 365);
+            } else {
+                visitCount = parseInt(visitCount) + 1;
+                document.getElementById("visitMessage").textContent = `You have visited ${visitCount} time(s)!`;
+                document.getElementById("lastVisitMessage").textContent = `You last visited on: ${lastVisit}`;
+
+                setCookie("visitCount", visitCount, 365);
+                setCookie("lastVisit", getCurrentDateTime(), 365);
+            }
+        }
+
+        trackVisits();
+    </script>
+</body>
+</html>

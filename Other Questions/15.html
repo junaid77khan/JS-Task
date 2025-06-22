@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mad-libs Game</title>
+</head>
+<body>
+
+<script>
+  // Prompt for user name
+  const userName = prompt("Enter your name:");
+
+  // Prompt for 5 words
+  const word1 = prompt("Enter a noun:");
+  const word2 = prompt("Enter a verb:");
+  const word3 = prompt("Enter an adjective:");
+  const word4 = prompt("Enter an adverb:");
+  const word5 = prompt("Enter a place:");
+
+  // Prompt for a color
+  const userColor = prompt("Enter a color (named or hex, e.g. red or #ff0000):");
+
+  // Helper to wrap words in a colored div
+  function colorWord(word) {
+    return `<div style="display:inline; color:${userColor}; font-weight:bold;">${word}</div>`;
+  }
+
+  // Build the story with highlighted words
+  const story = `
+    <h2>Mad-libs Story for ${userName}</h2>
+    <p>Once upon a time, there was a ${colorWord(word3)} ${colorWord(word1)} who loved to ${colorWord(word2)} every day.</p>
+    <p>They would do it so ${colorWord(word4)} that everyone around the ${colorWord(word5)} would notice and cheer!</p>
+    <p>And ${userName} always remembered this tale as one of the most ${colorWord(word3)} adventures ever.</p>
+  `;
+
+  document.write(story);
+</script>
+
+</body>
+</html>

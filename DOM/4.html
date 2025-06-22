@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Get Link Attributes</title>
+</head>
+<body>
+
+  <p>
+    <a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="http://www.w3resource.com/">
+      w3resource
+    </a>
+  </p>
+  
+  <button onclick="getAttributes()">Click here to get attributes value</button>
+
+  <script>
+    function getAttributes() {
+        let w3r = document.getElementById('w3r');
+        alert('href - ' + w3r.getAttribute('href'));
+        alert('hreflang - ' + w3r.getAttribute('hreflang'));
+        alert('rel - ' + w3r.getAttribute('rel'));
+        alert('target - ' + w3r.getAttribute('target'));
+        alert('type - '+ w3r.getAttribute('type'));
+    }
+  </script>
+
+</body>
+</html>

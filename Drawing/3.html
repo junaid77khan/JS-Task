@@ -1,0 +1,12 @@
+<canvas id="overlap" height="300" width="300"></canvas>
+
+<script>
+    const canvas = document.getElementById("overlap");
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = 'green';
+    ctx.fillRect(100, 100, 100, 100)
+
+    ctx.fillStyle = 'rgba(0, 0, 255, 0.5)';
+    ctx.fillRect(50, 30, 120, 100)
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <input type="number" id="number" name="number" />
+      <button id="add" onclick="add()">Add</button>
+      <button id="display" onclick="display()" >Display</button>
+      
+      <div id="array"></div>
+      <script src="script.js"></script>
+  </body>
+</html>
+
+let array = [];
+
+function add() {
+  let value = document.getElementById('number').value;
+  if(!value) {
+    alert('Invalid Input');
+  }
+  array.push(value);
+  document.getElementById('number').value = '';
+}
+
+function display() {
+  array.forEach((ele, idx) => {
+    document.getElementById('array').innerHTML += `Element ${idx} = ${ele}`;
+  })
+  
+}

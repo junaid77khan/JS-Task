@@ -1,0 +1,1 @@
+function case_insensitive_search(str, search) { return str.toLowerCase().includes(search.toLowerCase()) ? "Matched" : "Not Matched"; }

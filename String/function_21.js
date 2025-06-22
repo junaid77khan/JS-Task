@@ -1,0 +1,1 @@
+function subStrAfterChars(str, char, pos) { const index = str.indexOf(char); if (index === -1) return ''; return pos === 'a' ? str.substring(index + 1) : str.substring(index + 1).trimStart(); }

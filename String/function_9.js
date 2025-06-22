@@ -1,0 +1,1 @@
+function swapcase(str) { let result = ''; for (let ch of str) { result += ch === ch.toUpperCase() ? ch.toLowerCase() : ch.toUpperCase(); } return result; }

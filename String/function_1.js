@@ -1,0 +1,1 @@
+function is_string(input) { return typeof input === 'string' || input instanceof String; }

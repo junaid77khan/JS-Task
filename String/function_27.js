@@ -1,0 +1,1 @@
+function hex_to_ascii(hex) { let result = ''; for (let i = 0; i < hex.length; i += 2) { result += String.fromCharCode(parseInt(hex[i] + hex[i + 1], 16)); } return result; }

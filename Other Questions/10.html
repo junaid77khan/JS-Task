@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Marble Animation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #444;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #666;
+        }
+
+        .marble-container {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .marble {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            will-change: transform, box-shadow;
+        }
+
+        .marble:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .marble1 {
+            background-color: #FF5733;
+        }
+
+        .marble2 {
+            background-color: #33FF57;
+        }
+
+        .marble3 {
+            background-color: #3357FF;
+        }
+
+        .marble4 {
+            background-color: #FF33A1;
+        }
+
+        .nav-message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        .nav-message span {
+            font-weight: bold;
+            color: #FF5733;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Interactive Marble Animation</h1>
+        <p>Place your cursor on a marble to stop the animation. Remove your cursor to restart it.</p>
+        <div class="marble-container">
+            <div class="marble marble1" id="marble1"></div>
+            <div class="marble marble2" id="marble2"></div>
+            <div class="marble marble3" id="marble3"></div>
+            <div class="marble marble4" id="marble4"></div>
+        </div>
+        <div class="nav-message">Hover over a marble to <span>stop</span> the animation, or move the cursor away to <span>restart</span> it.</div>
+    </div>
+
+    <script>
+        let marbles = document.querySelectorAll('.marble');
+        let isAnimating = true;
+        let moveDistance = 100;
+        let speed = 0.5; // animation speed factor
+
+        function moveMarbles() {
+            if (isAnimating) {
+                marbles.forEach((marble) => {
+                    let currentPosition = parseInt(marble.style.left || 0);
+                    let newPosition = currentPosition + moveDistance;
+                    marble.style.left = newPosition + 'px';
+                });
+            }
+            setTimeout(moveMarbles, 1000 * speed); // Keep moving after 1 second
+        }
+
+        marbles.forEach((marble) => {
+            marble.addEventListener('mouseover', () => {
+                isAnimating = false;
+                document.querySelector('.nav-message').innerHTML = "Animation paused. Move the cursor away to restart.";
+            });
+
+            marble.addEventListener('mouseout', () => {
+                isAnimating = true;
+                document.querySelector('.nav-message').innerHTML = "Hover over a marble to <span>stop</span> the animation, or move the cursor away to <span>restart</span> it.";
+            });
+        });
+
+        moveMarbles();
+    </script>
+</body>
+</html>

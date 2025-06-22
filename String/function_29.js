@@ -1,0 +1,1 @@
+function string_endsWith(str, suffix) { if (!suffix) return false; return str.slice(-suffix.length) === suffix; }

@@ -1,0 +1,14 @@
+<canvas id="triangle" width="300" height="200"></canvas>>
+
+<script>
+    const canvas = document.getElementById('triangle');
+    const ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.moveTo(50, 50);
+    ctx.lineTo(50, 150);
+    ctx.lineTo(150,150);
+    ctx.closePath();
+    ctx.fillStyle='purple';
+    ctx.fill();
+</script>

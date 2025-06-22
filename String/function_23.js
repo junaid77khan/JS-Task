@@ -1,0 +1,1 @@
+function truncate(str, numWords) { return str.split(" ").slice(0, numWords).join(" "); }

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Hover Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .image-container {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hover Over the Images</h1>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/300x200/FF5733/FFFFFF?text=Image+1" 
+             alt="Image 1" 
+             id="image1" 
+             onmouseover="changeImage('image1', 'https://via.placeholder.com/300x200/33FF57/FFFFFF?text=Image+1+Hovered')" 
+             onmouseout="resetImage('image1', 'https://via.placeholder.com/300x200/FF5733/FFFFFF?text=Image+1')">
+    </div>
+    <div class="image-container">
+        <img src="https://via.placeholder.com/300x200/33FF57/FFFFFF?text=Image+2" 
+             alt="Image 2" 
+             id="image2" 
+             onmouseover="changeImage('image2', 'https://via.placeholder.com/300x200/FF5733/FFFFFF?text=Image+2+Hovered')" 
+             onmouseout="resetImage('image2', 'https://via.placeholder.com/300x200/33FF57/FFFFFF?text=Image+2')">
+    </div>
+
+    <script>
+        function changeImage(imageId, newSrc) {
+            document.getElementById(imageId).src = newSrc;
+        }
+
+        function resetImage(imageId, originalSrc) {
+            document.getElementById(imageId).src = originalSrc;
+        }
+    </script>
+</body>
+</html>

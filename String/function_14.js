@@ -1,0 +1,1 @@
+function humanize_format(num) { if (typeof num !== 'number') return undefined; const lastDigit = num % 10; const lastTwoDigits = num % 100; let suffix = 'th'; if (lastTwoDigits < 11 || lastTwoDigits > 13) { if (lastDigit === 1) suffix = 'st'; else if (lastDigit === 2) suffix = 'nd'; else if (lastDigit === 3) suffix = 'rd'; } return num + suffix; }

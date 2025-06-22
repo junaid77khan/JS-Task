@@ -1,0 +1,1 @@
+function count(str, subStr) { let count = 0; let pos = 0; while (str.indexOf(subStr, pos) !== -1) { count++; pos = str.indexOf(subStr, pos) + subStr.length; } return count; }

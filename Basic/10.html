@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1st Number :</h3>
+    <input type="number" id="num1">
+
+    <h3>2nd Number</h3>
+    <input type="number" id="num2">
+
+    <br>
+    <br>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+
+    <p>The result is : <span id="result"></span></p>
+
+    <script>
+        function multiply(){
+            const n1 = parseFloat(document.getElementById('num1').value);
+            const n2 = parseFloat(document.getElementById('num2').value);
+            const result = n1*n2;
+
+            document.getElementById("result").textContent= result;
+        }
+
+        function divide(){
+            const n1 = parseFloat(document.getElementById('num1').value);
+            const n2 = parseFloat(document.getElementById('num2').value);
+            const result = n1/n2;
+
+            document.getElementById("result").textContent= result;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+function escape_html(str) { return str.replace(/[&<>'"]/g, function(char) { const escapeMap = { '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }; return escapeMap[char]; }); }

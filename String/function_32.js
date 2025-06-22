@@ -1,0 +1,1 @@
+function remove_non_word(str) { return str.replace(/[^a-zA-Z0-9 ]/g, ''); }

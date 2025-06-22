@@ -1,0 +1,1 @@
+function string_chop(str, size) { if (typeof str !== 'string') return []; if (!size) return [str]; let result = []; for (let i = 0; i < str.length; i += size) { result.push(str.slice(i, i + size)); } return result; }

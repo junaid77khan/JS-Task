@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para">John The Don</p>
+    <button id="btn">Change background</button>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let para = document.getElementById('para');
+        let btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function() {
+            para.style.background = 'yellow';
+        })
+    })
+</script>
+</html>

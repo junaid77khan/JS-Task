@@ -1,0 +1,1 @@
+function insert(str, ins, pos) { pos = pos || 0; return str.slice(0, pos) + ins + str.slice(pos); }

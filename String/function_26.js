@@ -1,0 +1,1 @@
+function ascii_to_hexa(str) { return str.split('').map(char => char.charCodeAt(0).toString(16)).join(''); }

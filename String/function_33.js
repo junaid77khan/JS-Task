@@ -1,0 +1,1 @@
+function sentenceCase(str) { return str.toLowerCase().split('. ').map(sentence => sentence.charAt(0).toUpperCase() + sentence.slice(1)).join('. '); }

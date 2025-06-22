@@ -1,0 +1,50 @@
+<canvas id="draw" height="1000" width="1000"></canvas>
+
+<script>
+    const canvas = document.getElementById("draw");
+    const ctx = canvas.getContext('2d');
+
+    let centerX = 50;
+    let centerY = 50;
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, 20, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    centerX += 50;
+    centerY += 50;
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, 20, 0, 2 * Math.PI);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+    ctx.fill();
+    ctx.stroke();
+
+    centerX += 50;
+    centerY += 50;
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, 20, 0, 2 * Math.PI);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+    ctx.fill();
+    ctx.stroke();
+
+    centerX += 50;
+    centerY += 50;
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, 20, 0, 2 * Math.PI);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)';
+    ctx.fill();
+    ctx.stroke();
+
+    centerX += 50;
+    centerY += 50;
+
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, 20, 0, 2 * Math.PI);
+    ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+    ctx.fill();
+    ctx.stroke();
+
+</script>

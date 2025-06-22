@@ -1,0 +1,1 @@
+function uncamelize(str, sep = ' ') { return str.replace(/([A-Z])/g, sep + '$1').toLowerCase(); }

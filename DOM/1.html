@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS DOM Paragraph Style</title>
+  <style>
+    #text {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="text">JavaScript Exercises - w3resource</p>
+
+  <div>
+    <button id="styleButton">Style</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const paragraph = document.getElementById("text");
+      const styleButton = document.getElementById("styleButton");
+
+      styleButton.addEventListener("click", function () {
+        paragraph.style.fontFamily = "Courier New, Courier, monospace";
+        paragraph.style.fontSize = "20px";
+        paragraph.style.color = "#2a7ae2";
+      });
+    });
+  </script>
+
+</body>
+</html>

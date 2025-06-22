@@ -1,0 +1,1 @@
+function formatted_string(pad, str, dir) { str = str.toString(); if (dir === 'l') { return (pad + str).slice(-pad.length); } else { return (str + pad).substring(0, pad.length); } }

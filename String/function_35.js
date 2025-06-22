@@ -1,0 +1,1 @@
+function zeroFill(number, width, sign) { let output = Math.abs(number).toString().padStart(width, '0'); if (sign === '-') { output = (number < 0 ? '-' : '+') + output; } return output; }

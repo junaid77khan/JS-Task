@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Change the content of a cell</title>
+  <style type="text/css">
+    body { margin: 30px; }
+  </style>
+</head>
+<body>
+
+  <table id="myTable" border="1">
+  </table>
+
+  <form>
+    <input type="number" placeholder="Number of rows" id="rows" />
+    <input type="number" placeholder="Number of cols" id="cols" />
+    <input type="button" onclick="createTable()" value="Create the table">
+  </form>
+
+  <script>
+    
+    function createTable() {
+        let rows = parseInt(document.getElementById('rows').value);
+        if(isNaN(rows)) {
+            alert('Invalid Rows');
+            return;
+        }
+        let cols = parseInt(document.getElementById('cols').value);
+        if(isNaN(cols)) {
+            alert('Invalid Cols');
+            return;
+        }
+
+        let table = document.getElementById('myTable');
+
+        for(let i = rows-1; i >= 0; i--) {
+            let newRow = table.insertRow(0);
+            for(let j = 0; j < cols; j++) {
+                let col = newRow.insertCell(j);
+                col.innerHTML = `${i}, ${j}`; 
+            }
+        } 
+    }
+
+  </script>
+
+</body>
+</html>

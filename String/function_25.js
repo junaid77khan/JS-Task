@@ -1,0 +1,1 @@
+function remove_first_occurrence(str, search) { return str.replace(search, ''); }
