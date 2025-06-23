@@ -1,9 +1,30 @@
-<canvas id="rect" height="100" window="200"></canvas>
+<canvas id="rect" height="400" width="400"></canvas>
 
 <script>
     const rectId = document.getElementById('rect');
     const ctx = rectId.getContext('2d');
 
-    ctx.fillStyle = 'purple';
-    ctx.fillRect(20, 20, 150, 60);
+    
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, 200, 200);
+
+    
+    ctx.fillStyle = 'white';
+    ctx.fillRect(50, 50, 100, 100);
+
+    
+    const strokeWidth = 50;
+    const strokeHeight = 50;
+    const whiteX = 50;
+    const whiteY = 50;
+    const whiteWidth = 100;
+    const whiteHeight = 100;
+
+    const strokeX = whiteX + (whiteWidth - strokeWidth) / 2;
+    const strokeY = whiteY + (whiteHeight - strokeHeight) / 2;
+
+    ctx.strokeRect(strokeX, strokeY, strokeWidth, strokeHeight);
+
+
+
 </script>
