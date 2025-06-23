@@ -1,30 +1,40 @@
 <canvas id="rect" height="400" width="400"></canvas>
 
 <script>
+//     const rectId = document.getElementById('rect');
+//     const ctx = rectId.getContext('2d');
+
+    
+//     ctx.fillStyle = 'black';
+//     ctx.fillRect(0, 0, 200, 200);
+
+//     const whiteWidth = 100;
+//     const whiteHeight = 100;
+//     const whiteX = 50;
+//     const whiteY = 50;
+    
+//     ctx.fillStyle = 'white';
+//     ctx.fillRect(whiteX, whiteY, whiteWidth, whiteHeight);
+
+//     const strokeWidth = 50;
+//     const strokeHeight = 50;
+
+//     const strokeX = whiteX + (whiteWidth - strokeWidth) / 2;
+//     const strokeY = whiteY + (whiteHeight - strokeHeight) / 2;
+
+//     ctx.strokeRect(strokeX, strokeY, strokeWidth, strokeHeight);
+
     const rectId = document.getElementById('rect');
-    const ctx = rectId.getContext('2d');
+    const ctx =  rectId.getContext('2d');
 
+    // First we require a black rectangle
+    ctx.fillRect(0, 0, 200, 200);
     
-    ctx.fillStyle = 'black';
-    ctx.fillRect(0, 0, 200, 200);
-
-    
+    // Now white rectangle
     ctx.fillStyle = 'white';
-    ctx.fillRect(50, 50, 100, 100);
+    ctx.fillRect(50, 50, 100, 100);
 
-    
-    const strokeWidth = 50;
-    const strokeHeight = 50;
-    const whiteX = 50;
-    const whiteY = 50;
-    const whiteWidth = 100;
-    const whiteHeight = 100;
-
-    const strokeX = whiteX + (whiteWidth - strokeWidth) / 2;
-    const strokeY = whiteY + (whiteHeight - strokeHeight) / 2;
-
-    ctx.strokeRect(strokeX, strokeY, strokeWidth, strokeHeight);
-
-
+    // Now stroke inside white
+    ctx.strokeRect(60, 60, 80, 80);
 
 </script>
